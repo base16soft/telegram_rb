@@ -290,7 +290,7 @@ void interpreter_chat_mode (char *line) {
   if (line == NULL || /* EOF received */
           !strncmp (line, "/exit", 5) || !strncmp (line, "/quit", 5)) {
     in_chat_mode = 0;
-    update_prompt ();
+    //update_prompt ();
     return;
   }
   if (!strncmp (line, "/history", 8)) {

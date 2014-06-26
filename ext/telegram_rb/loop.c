@@ -81,14 +81,14 @@ void net_loop (int flags, int (*is_end)(void)) {
     work_timers ();
     if ((flags & 3) && (fds[0].revents & POLLIN)) {
       unread_messages = 0;
-      if (flags & 1) {
+      /*  if (flags & 1) {
         rl_callback_read_char ();
-      } else {
+      } else {*/
         char *line = 0;        
         size_t len = 0;
         assert (getline (&line, &len, stdin) >= 0);
         got_it (line, strlen (line));
-      }
+     // }
     }
     connections_poll_result (fds + cc, x - cc);
     if (safe_quit && !queries_num) {
