@@ -9,7 +9,7 @@ Rake::ExtensionTask.new do |ext|
   ext.ext_dir = "ext/telegram_rb"
   ext.lib_dir = "lib"
 end
-RSpec::Core::RakeTask.new("spec")
+#RSpec::Core::RakeTask.new("spec")
   
 desc 'clean all extension files'
 task :clean_all => :clean do
